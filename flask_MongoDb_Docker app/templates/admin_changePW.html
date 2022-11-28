@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link
+			rel="stylesheet"
+			href= "{{ url_for('static',filename='welcome.css') }}"
+			
+		/>
+
+    <title>DSChangePassword</title>
+    
+</head>
+<body>
+  
+   
+    <form method="post" >
+
+    <div class="form">
+        <div class="subtitle">Change your password </div>
+        
+       
+            <div class="input-container ic2">
+                <input id="emailA" name="emailA" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="emailA" class="placeholder">email</label>
+                </div>
+            
+            <div class="input-container ic2">
+                    <input id="passwordA" name="passwordA" class="input" type="password" placeholder=" " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                    required />
+                    <div class="cut"></div>
+                    <label for="passwordA" class="placeholder">Password</label>
+
+                    
+                      </div>  
+                      <button type="submit" class="submit">Change</button>
+                    </div>  
+                    
+              
+    
+            
+    </div>
+</form>
+
+
+    
+    
+</body>
+</html>
+

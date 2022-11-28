@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <link
+			rel="stylesheet"
+			href= "{{ url_for('static',filename='welcome.css') }}"
+			
+		/>
+		<title>DS store</title>
+    
+</head>
+
+
+
+<body>
+  {% if message  %}
+  <div class="alert alert-secondary" role="alert">
+      <p style="color: azure;">{{ message }}</p>
+  </div>
+{% endif %}
+
+ 
+  <table>
+    <th> <div class="title" style ="text-align: center; padding-bottom: 1%;">Administrator's Menu</div></th>
+    <tr>
+<td>
+
+<div class="form">
+
+<div class="subtitle">Create new administrator</div>
+    <div class="input-container ic1">
+      <a href="{{ url_for('createadministrator') }}" class="input">Create</a>
+        </div>
+</div>
+
+</td> 
+
+<td>
+
+  <div class="form">
+  
+  <div class="subtitle">Create new flight</div>
+      <div class="input-container ic1">
+        <a href="{{ url_for('newFlight') }}" class="input">New Flight </a>
+          </div>
+  </div>
+  
+  </td> 
+  
+    </tr>
+    <tr>
+        <td>
+        
+        <div class="form">
+        
+        <div class="subtitle">Handle a flight</div>
+            <div class="input-container ic1">
+              <a href="{{ url_for('flightHandle') }}" class="input">Flights Handle</a>
+                </div>
+        </div>
+        
+        </td> 
+        
+        <td>
+        
+          <div class="form">
+          
+          <div class="subtitle">Delete a certain flight</div>
+              <div class="input-container ic1">
+                <a href="{{ url_for('deleteFlight') }}" class="input">Delete Flight </a>
+                  </div>
+          </div>
+          
+          </td> 
+         
+            </tr>
+
+
+</body>
+</html>

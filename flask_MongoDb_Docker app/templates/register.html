@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link
+			rel="stylesheet"
+			href= "{{ url_for('static',filename='welcome.css') }}"
+			
+		/>
+
+    <title>DSRegister</title>
+    
+</head>
+<body>
+  {% if message  %}
+  <div class="alert alert-secondary" role="alert">
+      <p style="color: azure;">{{ message }}</p>
+  </div>
+{% endif %}
+
+   
+    <form method="post" >
+
+    <div class="form">
+       
+        <div class="subtitle">Let's create your account!</div>
+            <div class="input-container ic1">
+                <input id="fullname" name="fullname"class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="fullname" class="placeholder">Ονοματεπώνυμο</label>
+                </div>
+            <div class="input-container ic2">
+                <input id="email" name="email" class="input" type="text" placeholder=" " />
+                <div class="cut cut-short"></div>
+                <label for="email" class="placeholder">Email</label>
+                </div>
+           
+            <div class="input-container ic2">
+                <input id="username" name="username" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="username" class="placeholder">Username</label>
+                </div>
+            <div class="input-container ic2">
+                    <input id="password" name="password" class="input" type="password" placeholder=" " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                    title="Must contain at least one number and at least 8 or more characters" required />
+                    <div class="cut"></div>
+                    <label for="password" class="placeholder">Password</label>
+
+                    <div id="message" class = "message">
+                        <h5>Password must contain the following:</h5>
+                        <p id="number" class="invalid">A <b>number</b></p>
+                        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                      </div>  
+                    </div>  
+                    
+            <div class="input-container ic2">
+                        <input id="passport" name="passport" class="input" type="text" placeholder=" " />
+                        <div class="cut"></div>
+                        <label for="passport" class="placeholder">Αριθμός διαβατηρίου</label>
+                        </div>               
+    
+            <button type="submit">Submit</button>
+    </div>
+</form>
+<script>
+    var myInput = document.getElementById("password");
+   
+    var number = document.getElementById("number");
+    var length = document.getElementById("length");
+    
+    // When the user clicks on the password field, show the message box
+    myInput.onfocus = function() {
+      document.getElementById("message").style.display = "block";
+    }
+    
+    // When the user clicks outside of the password field, hide the message box
+    myInput.onblur = function() {
+      document.getElementById("message").style.display = "none";
+    }
+    
+    // When the user starts to type something inside the password field
+    myInput.onkeyup = function() {
+     
+    
+      // Validate numbers
+      var numbers = /[0-9]/g;
+      if(myInput.value.match(numbers)) {  
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+      } else {
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+      }
+      
+      // Validate length
+      if(myInput.value.length >= 8) {
+        length.classList.remove("invalid");
+        length.classList.add("valid");
+      } else {
+        length.classList.remove("valid");
+        length.classList.add("invalid");
+      }
+    }
+    </script>
+    
+    
+</body>
+</html>
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link
+			rel="stylesheet"
+			href= "{{ url_for('static',filename='welcome.css') }}"
+			
+		/>
+
+    <title>DSFlightSearch</title>
+    
+</head>
+<body>
+    {% if message  %}
+    <div class="alert alert-secondary" role="alert">
+        <p style="color: azure;">{{ message }}</p>
+    </div>
+  {% endif %}
+
+   
+    <form method="post" >
+
+    <div class="form">
+       
+        <div class="subtitle">Search flight</div>
+            <div class="input-container ic1">
+                <input id="departU" name="departU"class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="departU" class="placeholder">Departure from:</label>
+                </div>
+            <div class="input-container ic2">
+                <input id="arrivalU" name="arrivalU" class="input" type="text" placeholder=" " />
+                <div class="cut cut-short"></div>
+                <label for="arrivalU" class="placeholder">Arrival to:</label>
+                </div>
+           
+            
+             
+                    
+            <div class="input-container ic2">
+                        <input id="dateU" name="dateU" class="input" type="text"  placeholder=" e.g:2022-12-03"/>
+                        <div class="cut"></div>
+                        <label for="dateU" class="placeholder">Date </label>
+                        </div>  
+            
+              
+                       
+    
+            <button type="submit" class="submit">Submit</button>
+    </div>
+    </div>
+</form>
+
+{% for flight in flights %}
+        <div class="form" style="margin-left:3% ;" >
+            <div class="subtitle">Flight</div>
+            
+            <p><i>Departs From:</i>{{ flight['depart'] }} </p>
+            <p><i>Arrives at:</i>{{ flight['arrival'] }} </p>
+            <p><i>Price:</i>{{ flight['price'] }} </p>
+            <p><i>Duration:</i>{{ flight['duration'] }} </p>
+            <p><i>Date:</i>{{ flight['date'] }} </p>
+            <p><i>Time:</i>{{ flight['time'] }} </p>
+            <p><i>Availiable seats:</i>{{ flight['seats'] }} </p>
+            <p><i>Flight code:</i>{{ flight['code'] }} </p>
+            <a href="{{ url_for('reservationTicket') }}" class="input">Ticket for this flight</a>
+
+            
+
+            
+        </div>
+    {% endfor %}
+   
+
+    
+</body>
+</html>
+

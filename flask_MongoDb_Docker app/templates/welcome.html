@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <link
+			rel="stylesheet"
+			href= "{{ url_for('static',filename='welcome.css') }}"
+			
+		/>
+		<title>DS store</title>
+    
+</head>
+
+
+
+<body>
+
+
+ 
+  <table>
+    <th> <div class="title" style ="text-align: center; padding-bottom: 1%;">Welcome to DS stores</div></th>
+   
+    <tr>
+<td>
+
+<div class="form">
+
+<div class="subtitle">Let's create your account!</div>
+    <div class="input-container ic1">
+      <a href="{{ url_for('register') }}" class="input">Register</a>
+        </div>
+</div>
+
+</td> 
+
+<td>
+
+  <div class="form">
+  
+  <div class="subtitle">Let's go to your account!</div>
+      <div class="input-container ic1">
+        <a href="{{ url_for('signin') }}" class="input">Sign In</a>
+          </div>
+  </div>
+  
+  </td> 
+  <td>
+
+    <div class="form">
+    
+    <div class="subtitle">Let's activate your account!</div>
+        <div class="input-container ic1">
+          <a href="{{ url_for('activate_account') }}" class="input">Avtivate</a>
+            </div>
+    </div>
+    
+    </td> 
+
+
+</body>
+</html>

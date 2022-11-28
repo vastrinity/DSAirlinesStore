@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link
+			rel="stylesheet"
+			href= "{{ url_for('static',filename='welcome.css') }}"
+			
+		/>
+
+    <title>DSsignIn</title>
+    
+</head>
+<body>
+ 
+  {% if message  %}
+  <div class="alert alert-secondary" role="alert">
+      <p style="color: azure;">{{ message }}</p>
+  </div>
+{% endif %}
+
+   
+    <form method="post" >
+
+    <div class="form">
+       
+        
+            <div class="input-container ic2">
+                <input id="codeT" name="codeT" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="codeT" class="placeholder">Flight Code</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="nameT" name="nameT" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="nameT" class="placeholder">Fullname</label>
+                    </div>
+            <div class="input-container ic2">
+                    <input id="passportT" name="passportT" class="input" type="text" placeholder=" "  />
+                    <div class="cut"></div>
+                    <label for="passportT" class="placeholder">Passport</label>
+                   
+                    </div>  
+            <div class="input-container ic2">
+                        <input id="creditT" name="creditT" class="input" type="text" placeholder=" " pattern="{16}" />
+                        <div class="cut"></div>
+                        <label for="creditT" class="placeholder">Credit Card number</label>
+
+                    
+                      </div>  
+              
+                      <button type="submit" class="submit">submit</button>
+
+            
+    </div>
+</form>
+
+{% for e in reservationT %}
+<div class="form" style="margin-left:3% ;" >
+  {% if message  %}
+  <div class="alert alert-secondary" role="alert">
+      <p style="color: azure;">{{ message }}</p>
+  </div>
+{% endif %}
+
+  <div class="subtitle">Ticket</div>
+  
+  <p><i>Flight Code:</i>{{ e['flightCode'] }} </p>
+  <p><i>Price:</i>{{ e['price'] }} </p>
+  <p><i>From:</i>{{ e['departT'] }} </p>
+  <p><i>To:</i>{{ e['arrivalT'] }} </p>
+  <p><i>Date:</i>{{ e['dateT'] }} </p>
+  <p><i>Time:</i>{{ e['timeT'] }} </p>
+  <p><i>Ticket code:</i>{{ e['ticket_code'] }} </p>
+  <p><i>Name:</i>{{ e['name'] }} </p>
+  <p><i>Username:</i>{{ e['username'] }} </p>
+  <p><i>Passport:</i>{{ e['passport'] }} </p>
+  <p><i>Credit card:</i>{{ e['credit_card'] }} </p>
+  
+  <a href="{{ url_for('myreservations') }}" class="input">My reservations</a>
+  
+
+  
+  {% endfor %}
+  
+  
+</div>
+
+
+    
+</body>
+</html>
+

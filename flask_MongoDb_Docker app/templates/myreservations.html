@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <link
+			rel="stylesheet"
+			href= "{{ url_for('static',filename='welcome.css') }}"
+			
+		/>
+		<title>DS store</title>
+    
+</head>
+
+
+
+<body>
+
+
+ 
+  <table>
+    <th> <div class="title" style ="text-align: center; padding-bottom: 1%;">My reservations</div></th>
+    <tr>
+<td>
+
+<div class="form">
+
+<div class="subtitle">You can delete a reservation</div>
+    <div class="input-container ic1">
+      <a href="{{ url_for('deletereservation') }}" class="input">Delete a resarvation</a>
+        </div>
+</div>
+
+</td> 
+
+<td>
+
+  <div class="form">
+  
+  <div class="subtitle">Let's see all the reservations you have</div>
+      <div class="input-container ic1">
+        <a href="{{ url_for('newestfirst') }}" class="input">newest first </a>
+        <a href="{{ url_for('oldestfirst') }}" class="input">oldest first </a>
+   
+      </div>
+  </div>You can search a reservation
+  
+  </td> 
+  
+    </tr>
+    <tr>
+        <td>
+        
+        <div class="form">
+        
+        <div class="subtitle">You can search a reservation by departure</div>
+            <div class="input-container ic1">
+              <a href="{{ url_for('searchByDepart') }}" class="input">Search</a>
+                </div>
+        </div>
+        
+        </td>
+        <td>
+        
+          <div class="form">
+          
+          <div class="subtitle">You can see the cheapest and most expensive reservation you have </div>
+              <div class="input-container ic1">
+                <a href="{{ url_for('showReservationsByPrice') }}" class="input">Show me</a>
+                  </div>
+          </div>
+          
+          </td>
+            </tr>
+</table>
+
+</body>
+</html>

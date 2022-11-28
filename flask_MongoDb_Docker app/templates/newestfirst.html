@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link
+			rel="stylesheet"
+			href= "{{ url_for('static',filename='welcome.css') }}"
+			
+		/>
+
+    <title>DSFnewestReservation</title>
+    
+</head>
+<body>
+    {% if message  %}
+    <div class="alert alert-secondary" role="alert">
+        <p style="color: azure;">{{ message }}</p>
+    </div>
+  {% endif %}
+  <div class="subtitle">Reservations</div>
+  {% for new in reservnew %}
+  <div class="form" style="margin-left:3% ;" >
+   <p><i>Flight Code:</i>{{ new['flightCode'] }} </p>
+    <p><i>Price:</i>{{ new['price'] }} </p>
+    <p><i>From:</i>{{ new['departT'] }} </p>
+    <p><i>To:</i>{{ new['arrivalT'] }} </p>
+    <p><i>Date:</i>{{ new['dateT'] }} </p>
+    <p><i>Time:</i>{{ new['timeT'] }} </p>
+    <p><i>Ticket code:</i>{{ new['ticket_code'] }} </p>
+   
+    <p><i>Credit card:</i>{{ new['credit_card'] }} </p>
+    
+    
+  
+    
+    {% endfor %}
+    
+    
+  </div>
+   
+
+   
+
+    
+</body>
+</html>
+

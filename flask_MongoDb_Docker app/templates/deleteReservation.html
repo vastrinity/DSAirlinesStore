@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link
+			rel="stylesheet"
+			href= "{{ url_for('static',filename='welcome.css') }}"
+			
+		/>
+
+    <title>DSdelete_reservation</title>
+    
+</head>
+<body>
+  
+   
+    <form method="post" >
+
+    <div class="form">
+        <div class="subtitle"> Delete a reservation</div>
+        
+       
+            <div class="input-container ic2">
+                <input id="ticketcoded" name="ticketcoded" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="ticketcoded" class="placeholder">Ticket Code</label>
+                </div>
+           
+                      <button type="submit" class="submit">Delete</button>
+                    </div>  
+
+                    
+              
+    
+            
+    </div>
+</form>
+
+ {% if message  %}
+    <div class="alert alert-secondary" role="alert">
+        <p style="color: azure;">{{ message }}</p>
+    </div>
+    {% endif %}
+
+    
+    
+</body>
+</html>
+

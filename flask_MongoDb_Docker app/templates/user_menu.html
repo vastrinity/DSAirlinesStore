@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <link
+			rel="stylesheet"
+			href= "{{ url_for('static',filename='welcome.css') }}"
+			
+		/>
+		<title>DS store</title>
+    
+</head>
+
+
+
+<body>
+
+
+ 
+  <table>
+    <th> <div class="title" style ="text-align: center; padding-bottom: 1%;">User Menu</div></th>
+    <tr>
+
+
+<td>
+
+  <div class="form">
+  
+  <div class="subtitle">Do you want to deactivate your account?</div>
+      <div class="input-container ic1">
+        <a href="{{ url_for('myaccount') }}" class="input">Deactivate my account </a>
+          </div>
+  </div>
+  
+  </td> 
+  
+    </tr>
+    <tr>
+        <td>
+        
+        <div class="form">
+        
+        <div class="subtitle">Let's find a flight for you</div>
+            <div class="input-container ic1">
+              <a href="{{ url_for('flightSearch') }}" class="input">Flight Search</a>
+                </div>
+        </div>
+        
+        </td> 
+        
+        <td>
+        
+          <div class="form">
+          
+          <div class="subtitle">Let's go see your reservations</div>
+              <div class="input-container ic1">
+                <a href="{{ url_for('myreservations') }}" class="input">My Reservations </a>
+                  </div>
+          </div>
+          
+          </td> 
+          <td>
+        
+            <div class="form">
+            
+            <div class="subtitle">Let's get you a ticket </div>
+                <div class="input-container ic1">
+                  <a href="{{ url_for('reservationTicket') }}" class="input">Ticket</a>
+                    </div>
+            </div>
+            
+            </td> 
+            </tr>
+
+
+</body>
+</html>

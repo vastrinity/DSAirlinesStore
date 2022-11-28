@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link
+			rel="stylesheet"
+			href= "{{ url_for('static',filename='welcome.css') }}"
+			
+		/>
+
+    <title>DSDeleteFlight</title>
+    
+</head>
+<body>
+    {% if message  %}
+    <div class="alert alert-secondary" role="alert">
+        <p style="color: azure;">{{ message }}</p>
+    </div>
+  {% endif %}
+  
+
+   
+    <form method="post" >
+
+    <div class="form">
+       
+        <div class="subtitle">Delete a flight</div>
+            <div class="input-container ic1">
+                <input id="codeC" name="codeC"class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="codeC" class="placeholder">Flight Code</label>
+                </div>
+          
+           
+            
+            
+           
+    
+            <button type="submit" class="submit">Delete</button>
+    </div>
+    </div>
+</form>
+
+   
+
+    
+</body>
+</html>
+
